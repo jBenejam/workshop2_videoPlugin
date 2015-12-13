@@ -1,0 +1,164 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard</title>
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <!-- Own styles-->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body class="container-fluid">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="landing.html">Landing</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="login.html">LogIn</a></li>
+                    <li><a href="signup.html">SignUp</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="row margintop">
+        <div class="col-md-2 menuUser hidden-xs hidden-sm">
+            <img  class="img-circle img-responsive" src="img/user.png" alt="photo user">
+            <p>Name of User</p>
+            <button class="btn  btn-defaultt" type="submit">page 1</button><br/>
+            <button class="btn  btn-defaultt" type="submit">page 2</button><br/>
+            <button class="btn  btn-defaultt" type="submit">page 3</button>
+        </div>
+
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-10 col-xs-10 col-md-offset-1 col-xs-offset-1 ">
+                    <h2>Video</h2>
+                    <div id="videoPlayer">
+                        <!--<video id="video" poster="img/ramis.png" class="center-block">
+                            <source src="video/dummy2.mp4" type="video/mp4">
+                            Your browser does not support the video element.
+                        </video>
+                        <div class="videoButtons" >
+                            <ul class="videoToolbar control-buttons">
+                                <li class="col-xs-3 col-md-1 col-sm-1">
+                                    <button type="button" id="PlayPauseButton" title="space"
+                                            class="btn btn-default  btn-sm glyphicon glyphicon-play"></button>
+                                </li>
+                                <li class="col-sm-4 hidden-xs">
+                                    <div>
+                                        <input type="range" id="seekBar" title="row right/left" class="range pull-left"
+                                               min="0"
+                                               max="100"
+                                               value="0" step="1" style="min-width: 150px; width: 250px;">
+                                        <span id="numberSeek" class="pull-right" >00:00</span>
+                                    </div>
+                                </li>
+                                <li class="col-xs-3 col-md-1 col-sm-1">
+                                    <button type="button" id="muteButton"
+                                            class="btn btn-default btn-sm glyphicon glyphicon-volume-up"></button>
+                                </li>
+                                <li class="col-sm-2 hidden-xs">
+                                    <div>
+                                        <input type="range" id="volumeBar" title="row up/down" class="range" min="0"
+                                               max="100"
+                                               value="100" step="1">
+
+                                    </div>
+                                </li>
+                                <li class="col-xs-3 col-md-1 col-sm-1">
+                                    <button type="button" id="fullScreenButton"
+                                            class="btn btn-default  btn-sm glyphicon glyphicon-fullscreen"></button>
+                                </li>
+                                <li class="col-md-1 hidden-sm hidden-xs">
+                                    <button type="button" id="stopButton"
+                                            class="btn btn-default  btn-sm glyphicon glyphicon-stop"></button>
+                                </li>
+                                <li class="col-xs-1 hidden-sm hidden-xs">
+                                    <select id="playRateList" title="+/-">
+                                        <option value="1">1</option>
+                                        <option value="0.5">0.5</option>
+                                        <option value="1.5">1.5</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                </li>
+                            </ul>
+                        </div>-->
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 valuesControls col-centered margintop">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><b>Values of controls</b></p>
+                            <span >Video status: </span> <span id="status"></span><br/>
+                            <span >Video time (seconds): </span> <span id="time"></span><br/>
+                            <span >Volume: </span> <span id="vol"></span><br/>
+                            <span >Play rate: </span> <span id="rate"></span><br/>
+                        </div>
+                        <div class="col-md-6">
+                            <p><b>Video Scene</b></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row footer">
+        <div class="col-md-10 col-centered">
+            <div class="row">
+                <footer>
+                    <div class="col-md-3 col-md-offset-1">
+                        <b>Prueba 1</b>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed convallis risus. Nam vitae varius enim. Suspendisse eu nunc felis. Ut pretium, diam vitae bibendum convallis, orci urna finibus erat, eu commodo metus massa tincidunt mauris. Aliquam eget erat arcu. Morbi in erat ultricies, pretium odio nec, tincidunt urna.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <b>Prueba 2</b>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed convallis risus. Nam vitae varius enim. Suspendisse eu nunc felis. Ut pretium, diam vitae bibendum convallis, orci urna finibus erat, eu commodo metus massa tincidunt mauris. Aliquam eget erat arcu. Morbi in erat ultricies, pretium odio nec, tincidunt urna.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <b>Prueba 3</b>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed convallis risus. Nam vitae varius enim. Suspendisse eu nunc felis. Ut pretium, diam vitae bibendum convallis, orci urna finibus erat, eu commodo metus massa tincidunt mauris. Aliquam eget erat arcu. Morbi in erat ultricies, pretium odio nec, tincidunt urna.</p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!--<script src="js/videoJS.js"></script>-->
+
+    <!--load Plugin-->
+    <script src="js/JBenejam.Video.js"></script>
+    <script type="text/javascript">
+        $( document ).ready(function() {
+            $("#videoPlayer").JBenejam_Video(null,{
+                poster : "img/ramis.png",
+                src: "video/dummy2.mp4",
+                type: "video/mp4",
+                msg: "Your browser does not support the video element. ",
+
+            });
+        });
+    </script>
+</body>
+</html>

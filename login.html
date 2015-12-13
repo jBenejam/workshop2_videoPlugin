@@ -1,0 +1,142 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>LogIn</title>
+        <!-- Bootstrap -->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script type="text/javascript">
+
+            var value = function(elemID) {
+                return document.getElementById(elemID).value;
+            };
+
+            function Validate() {
+                if (value("inputUser").search("pepe")>=0) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="landing.html">Landing</a>
+                    </div>
+                    <div id="navbar" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#">LogIn</a></li>
+                            <li><a href="signup.html">SignUp</a></li>
+                            <li><a href="dashboard.html">Dashboard</a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </nav>
+
+            <div class="row">
+                <div class="col-md-5 col-md-offset-3 col-centered">
+                    <form class="form-horizontal form-in"  action="dashboard.html" onSubmit="return Validate();">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2>Please login</h2>
+                                <label for="inputUser" class="sr-only">User</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon glyphicon glyphicon-user ico"></div>
+                                    <input type="text" id="inputUser" class="form-control" placeholder="user name">
+                                </div>
+                                <br>
+                                <label for="inputPassword" class="sr-only">Password</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon glyphicon glyphicon-lock ico"></div>
+                                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row right">
+                            <div class="col-md-12">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="remember-me">Remember me
+                                    </label>
+                                </div>
+                                <button class="btn btn-sm btn-primary" type="submit">Log In</button>
+                            </div>
+                        </div>
+                        <div class="row right">
+                            <div class="col-md-12">
+                                <br>
+                                <div class="line">
+                                    <p class="remember">Forgot Password? <a href="#">Remember Here</a></p>
+                                    <p> Don't have an account? <a href="signup.html">Sign Up Here</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+           <!-- <footer>
+                <div class="row">
+                    <div class="col-md-3 col-md-offset-1">
+                        <b>Prueba 1</b>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed convallis risus. Nam vitae varius enim. Suspendisse eu nunc felis. Ut pretium, diam vitae bibendum convallis, orci urna finibus erat, eu commodo metus massa tincidunt mauris. Aliquam eget erat arcu. Morbi in erat ultricies, pretium odio nec, tincidunt urna.</p>
+
+                    </div>
+                    <div class="col-md-3">
+                        <b>Prueba 2</b>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed convallis risus. Nam vitae varius enim. Suspendisse eu nunc felis. Ut pretium, diam vitae bibendum convallis, orci urna finibus erat, eu commodo metus massa tincidunt mauris. Aliquam eget erat arcu. Morbi in erat ultricies, pretium odio nec, tincidunt urna.</p>
+
+                    </div>
+                    <div class="col-md-3">
+                        <b>Prueba 3</b>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed convallis risus. Nam vitae varius enim. Suspendisse eu nunc felis. Ut pretium, diam vitae bibendum convallis, orci urna finibus erat, eu commodo metus massa tincidunt mauris. Aliquam eget erat arcu. Morbi in erat ultricies, pretium odio nec, tincidunt urna.</p>
+                    </div>
+                </div>
+            </footer>-->
+
+            <div class="row footer">
+                <footer>
+                    <div class="col-md-3 col-md-offset-1">
+                        <b>Prueba 1</b>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed convallis risus. Nam vitae varius enim. Suspendisse eu nunc felis. Ut pretium, diam vitae bibendum convallis, orci urna finibus erat, eu commodo metus massa tincidunt mauris. Aliquam eget erat arcu. Morbi in erat ultricies, pretium odio nec, tincidunt urna.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <b>Prueba 2</b>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed convallis risus. Nam vitae varius enim. Suspendisse eu nunc felis. Ut pretium, diam vitae bibendum convallis, orci urna finibus erat, eu commodo metus massa tincidunt mauris. Aliquam eget erat arcu. Morbi in erat ultricies, pretium odio nec, tincidunt urna.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <b>Prueba 3</b>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed convallis risus. Nam vitae varius enim. Suspendisse eu nunc felis. Ut pretium, diam vitae bibendum convallis, orci urna finibus erat, eu commodo metus massa tincidunt mauris. Aliquam eget erat arcu. Morbi in erat ultricies, pretium odio nec, tincidunt urna.</p>
+                    </div>
+
+                </footer>
+            </div>
+
+        </div>
+    </body>
+</html>

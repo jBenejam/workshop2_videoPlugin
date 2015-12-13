@@ -1,0 +1,241 @@
+/*---General----*/
+@font-face
+{
+    font-family: Sansation;
+    src:url(../fonts/Sansation-Light.ttf);
+}
+@font-face
+{
+    font-family: SansationIE;
+    src:url(../fonts/Sansation-Light.eot);
+}
+body{
+    font-family: Sansation, SansationIE;
+    background-color:#eee;
+}
+
+.navbar {
+    background-color:#2E2E2E;
+    border-bottom: 5px solid orange;
+}
+
+/*footer {
+    color:white;
+    background-color:#2E2E2E;
+    border-top: 5px solid orange;
+
+    <!--height:100px;
+    width:100%;
+    bottom: 0;
+    position:fixed;-->
+}
+footer .row{
+    margin-top:10px;
+}*/
+
+
+.footer {
+    color:white;
+    background-color:#2E2E2E;
+    border-top: 5px solid orange;
+}
+footer div{
+    margin-top:10px;
+}
+
+footer p{
+    text-align:justify;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+/*----SignUp and LogIn-----*/
+h2{
+    margin-top:0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+.form-in{
+    margin-top:100px;
+    margin-bottom:50px;
+    background-color:#ffffff;
+    border-radius: 10px;
+    padding:15px;
+    /*width: 500px;
+    margin: 0 auto;*/
+}
+
+/*-----Login-----*/
+.glyphicon.ico{
+    top:0;
+}
+.line{
+    border-top: 1px solid #eee;
+
+}
+.right p{
+    margin:0;
+}
+.right{
+    text-align: right;
+}
+.inputPhoto {
+
+}
+
+/*-----SignUp-----*/
+.img-circle{
+    width: 140px;
+    height: 140px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+/*----Landing-----*/
+
+.row0{
+
+    background-color: #18BD9B;
+    height: 670px;
+    margin-top:50px;
+    text-align:justify;
+}
+
+header{
+    margin-top:100px;
+    color:white;
+}
+hr{
+    height:2px;
+    background-color:white;
+}
+header h1{
+    font-size:5em;
+    font-weight: bold;
+    margin-top:100px;
+    text-align:center;
+}
+
+.row1, .row3, .row5{
+    background-color: #eee;
+
+}
+.row1 div{
+    margin-top:100px;
+    text-align:justify;
+}
+
+.row2, .row4{
+    background-color: #fff;
+}
+.row2 div {
+    margin-top:80px;
+    margin-bottom: 80px;
+    text-align:justify;
+}
+
+.row3 .row div{
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.row2 div {
+    margin-top:10px;
+    margin-bottom: 10px;
+    text-align:justify;
+}
+
+.btn-dark {
+    border-radius: 0;
+    color: #fff;
+    background-color: #999999;
+}
+
+.btn-orange {
+    border-radius: 25px;
+    color: #fff;
+    background-color:orange;
+}
+.button{
+    text-align: center;
+}
+
+.row4, .row5 {
+    padding-top:20px;
+    padding-bottom: 20px;
+}
+.help-block {
+    height: 17px;
+}
+
+/*----Dashboard-----*/
+.menuUser{
+    background-color: #18BD9B;
+    height: 80vh;
+}
+
+.margintop{
+    margin-top: 55px;
+}
+
+.valuesControls{
+    background-color: white;
+}
+
+/*----Video-----*/
+video {
+    width: 50%    !important;
+    height: auto   !important;
+    min-height: 200px;
+    min-width: 200px;
+    margin:0;
+
+}
+
+#videoPlayer {
+    margin-top: 10px;
+}
+
+#numberSeek, .range{
+    margin-top: 5px !important;
+    color:white;
+}
+
+.control-buttons div{
+     padding-left: 0;
+ }
+
+.control-buttons {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: 35px;
+    opacity: 0;
+    -webkit-transition: opacity .3s;
+    -moz-transition: opacity .3s;
+    -o-transition: opacity .3s;
+    -ms-transition: opacity .3s;
+    transition: opacity .3s;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.videoButtons:hover .control-buttons {
+    opacity: .9;
+}
+
+ul.videoToolbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.videoToolbar > li {
+    float: left;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+

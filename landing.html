@@ -1,0 +1,251 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Landing</title>
+        <!-- Bootstrap -->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+       <script type="text/javascript">
+            var getElement = function (inputID){
+                return document.getElementById(inputID);
+            };
+
+            function valForm (){
+                var name=valName();
+                var text=valText();
+                var salary=valSalary();
+
+                if (name && text && salary){
+                    return true;
+                }else {
+                    return false
+                }
+            }
+
+            function valName(){
+                var v=getElement("fullName");
+                var boxCheck=document.getElementById("check1");
+                boxCheck.style.color="red";
+
+                if (v.value.length<7 || v.value.length>50 ){
+                    boxCheck.innerHTML = "Name between 7 and 50 characters";
+                    v.style.borderColor="#A95642";
+                    return false;
+                }
+                else{
+                    v.style.borderColor="#3C763D";
+                    boxCheck.innerHTML = "";
+                    return true;
+                }
+            }
+
+            function valText(){
+                var v=getElement("textAreal");
+                var boxCheck=document.getElementById("check2");
+                boxCheck.style.color="red";
+
+                if (v.value.length>500 ){
+                    boxCheck.innerHTML = "Maximum length 500";
+                    v.style.borderColor="#A95642";
+                    return false;
+                }
+                else{
+                    v.style.borderColor="#3C763D";
+                    boxCheck.innerHTML = "";
+                    return true;
+                }
+            }
+
+            function valSalary(){
+                var v=getElement("salary");
+                var boxCheck=document.getElementById("check3");
+                boxCheck.style.color="red";
+
+                if (v.value<20000 || v.value>200000 ){
+                    boxCheck.innerHTML = "Salary between 20000 and 200000";
+                    v.style.borderColor="#A95642";
+                    return false;
+                }
+                else{
+                    v.style.borderColor="#3C763D";
+                    boxCheck.innerHTML = "";
+                    return true;
+                }
+            }
+       </script>
+    </head>
+    <body class="container-fluid">
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="landing.html">Landing</a>
+                    </div>
+                    <div id="navbar" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="login.html">LogIn</a></li>
+                            <li><a href="signup.html">SignUp</a></li>
+                            <li><a href="dashboard.html">Dashboard</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="row row0">
+                <header>
+                    <div class="col-md-6 col-md-offset-3">
+                        <h1>Landing Page</h1>
+                        <hr>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed convallis risus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed convallis risus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed convallis risus.</p>
+                        <p class="button"><a class="btn btn-orange" href="#" role="button">Find out more</a></p>
+                    </div>
+
+                </header>
+            </div>
+            <div class="row row1">
+                <div class="col-md-5 col-md-offset-1">
+                    <img class="img-responsive" src="img/devices.png" alt="device" >
+                </div>
+                <div class="col-md-5">
+                    <h2>Devices</h2>
+                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+                </div>
+            </div>
+            <div class="row row2">
+                <div class="col-md-3 col-md-offset-2">
+                    <img class="center-block img-responsive" src="img/html-5-icon.png" alt="htm5" >
+                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+                    <p class="button"><a class="btn btn-dark" href="#" role="button">View details</a></p>
+                </div>
+                <div class="col-md-3">
+                    <img class="center-block img-responsive" src="img/js-icon.png" alt="javascript" >
+                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+                    <p class="button"><a class="btn btn-dark" href="#" role="button">View details</a></p>
+                </div>
+                <div class="col-md-3  ">
+                    <img class="center-block img-responsive" src="img/css-3-icon.png" alt="css3" >
+                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+                    <p class="button"><a class="btn btn-dark" href="#" role="button">View details</a></p>
+                </div>
+            </div>
+            <div class="row row3">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-3 col-md-offset-2">
+                            <img src="img/web1.jpg" class="img-thumbnail img-responsive" alt="web1">
+                        </div>
+                        <div class="col-md-3">
+                            <img src="img/web2.jpg" class="img-thumbnail img-responsive"  alt="web2">
+                        </div>
+                        <div class="col-md-3">
+                            <img src="img/web3.jpg" class="img-thumbnail img-responsive" alt="web3">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-md-offset-2">
+                            <img src="img/web4.jpg" class="img-thumbnail img-responsive" alt="web4">
+                        </div>
+                        <div class="col-md-3">
+                            <img src="img/web5.jpg" class="img-thumbnail img-responsive" alt="web5">
+                        </div>
+                        <div class="col-md-3">
+                            <img src="img/web6.jpg" class="img-thumbnail img-responsive" alt="web6">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row row4 ">
+                <div class="col-md-8 col-md-offset-2">
+                    <h2>Contact</h2>
+                    <form id="formContact" class="form-inline" method="post" onsubmit="return valForm()">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="fullName">Full Name</label>
+                                    <input type="text" id="fullName" name="fullName" class="form-control" placeholder="Enter Full Name" onblur="return valName()" >
+                                    <small id="check1" class="help-block"></small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="DateBirth">Date of birth</label>
+                                    <input type="date" id="DateBirth" placeholder="dd/mm/aaaa" class="form-control" name="DateBirth">
+                                    <small id="check0" class="help-block"></small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="salary">Salary</label>
+                                    <input type="number" id="salary" class="form-control" value="20000" step="500" onblur="valSalary();">
+                                    <small id="check3" class="help-block"></small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for= "male" >Male</label>
+                                    <input checked= ""  type= "radio"  name= "gender"  id= "male"  value= "male" >
+                                    <label for= "female" >Female</label>
+                                    <input type= "radio"  name= "gender"  id= "female"  value= "female" >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <textarea rows="5" cols="99" id="textAreal" class="form-control " placeholder="Enter a text:" onblur="return valText()"></textarea>
+                                    <small id="check2" class="help-block"></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="subscribe">Subscriber</label>
+                                    <input type="checkbox" name="subscribe" id="subscribe" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-info" value="Submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row footer">
+                <div class="col-md-10 col-centered">
+                    <div class="row">
+                        <footer>
+                            <div class="col-md-3 col-md-offset-1">
+                                <b>Prueba 1</b>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed convallis risus. Nam vitae varius enim. Suspendisse eu nunc felis. Ut pretium, diam vitae bibendum convallis, orci urna finibus erat, eu commodo metus massa tincidunt mauris. Aliquam eget erat arcu. Morbi in erat ultricies, pretium odio nec, tincidunt urna.</p>
+                            </div>
+                            <div class="col-md-3">
+                                <b>Prueba 2</b>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed convallis risus. Nam vitae varius enim. Suspendisse eu nunc felis. Ut pretium, diam vitae bibendum convallis, orci urna finibus erat, eu commodo metus massa tincidunt mauris. Aliquam eget erat arcu. Morbi in erat ultricies, pretium odio nec, tincidunt urna.</p>
+                            </div>
+                            <div class="col-md-3">
+                                <b>Prueba 3</b>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed convallis risus. Nam vitae varius enim. Suspendisse eu nunc felis. Ut pretium, diam vitae bibendum convallis, orci urna finibus erat, eu commodo metus massa tincidunt mauris. Aliquam eget erat arcu. Morbi in erat ultricies, pretium odio nec, tincidunt urna.</p>
+                            </div>
+                         </footer>
+                    </div>
+                </div>
+            </div>
+    </body>
+</html>
