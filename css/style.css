@@ -182,11 +182,13 @@ header h1{
 
 .valuesControls{
     background-color: white;
+    margin-top: 20px;
+    margin-bottom: 55px;
 }
 
 /*----Video-----*/
 video {
-    width: 50%    !important;
+    width: 100%    !important;
     height: auto   !important;
     min-height: 200px;
     min-width: 200px;

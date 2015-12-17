@@ -104,18 +104,55 @@
                 </div>
             </div>
 
+            <div class="modal fade" id="modalStore" tabindex="-1" role="dialog" aria-labelledby="storeModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="storeModalLabel">Store Scene</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="recipient-name" class="control-label">Name Scene:</label>
+                                    <input type="text" class="form-control" id="recipient-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message-text" class="control-label">Comments:</label>
+                                    <textarea class="form-control" id="message-text"></textarea>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" id="store" data-dismiss="modal" class="btn btn-primary">Store</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="row">
-                <div class="col-md-6 valuesControls col-centered margintop">
+                <div class="col-md-6 col-sm-8 valuesControls col-centered">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-xs-6 col-sm-6">
                             <p><b>Values of controls</b></p>
                             <span >Video status: </span> <span id="status"></span><br/>
                             <span >Video time (seconds): </span> <span id="time"></span><br/>
                             <span >Volume: </span> <span id="vol"></span><br/>
                             <span >Play rate: </span> <span id="rate"></span><br/>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-xs-6 col-sm-6">
                             <p><b>Video Scene</b></p>
+                            <div class="row">
+                                <div id="scenes" class="col-md-6  col-sm-6">
+
+                                </div>
+                                <div class="col-md-6  col-sm-6">
+                                    <button type="button" id="modal" data-toggle="modal" data-target="#modalStore" class="btn btn-default btn-xs ">Store Scene</button>
+                                    <button type="button" id="show" class="btn btn-default btn-xs">Show Scenes</button>
+                                    <button type="button" id="delete" class="btn btn-default btn-xs">Delete all Scenes</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -152,7 +189,7 @@
     <script type="text/javascript">
         $( document ).ready(function() {
             $("#videoPlayer").JBenejam_Video(null,{
-                poster : "img/ramis.png",
+                poster : "img/poster.png",
                 src: "video/dummy2.mp4",
                 type: "video/mp4",
                 msg: "Your browser does not support the video element. ",

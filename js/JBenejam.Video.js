@@ -67,6 +67,7 @@
                  space:base.options.NameKeyMap.space,
                  Trow: base.options.NameKeyMap.Trow,
                  Vrow: base.options.NameKeyMap.Vrow,
+                 tab:base.options.NameKeyMap.tab,
                  rateList: base.options.NameKeyMap.rateList
 
              });
@@ -98,23 +99,23 @@
             var flag='pause';
             $(document).keydown(function (event) {
                 switch (event.keyCode) {
-                     /*case base.options.KeyMap.FULL_SCREEN:
-                         http://www.intheloftstudios.com/blog/detecting-html5-video-fullscreen-and-events
-                         var state = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen;
+                    case base.options.KeyMap.FULL_SCREEN:
 
-                         if ( flag== true) {
-                         FFullScreen();
-                         vid.controls = true;
-                         flag = false;
-                         } else {
-                         vid.controls = false;
-                         flag = true;
-                         }
-                        break;*/
+                        if (document.getElementById('modalStore').style.display!='block') {     //if the Modal is open, don't make video features
+                            if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
+                                FFullScreen();
+                            } else {
+                                FFullScreenExit();
+                            }
+                        }
+                        break;
 
                     case base.options.KeyMap.PLAY_PAUSE:
-                        console.log('Video Paused? '+flag);
-                        FPlayPause();
+                        if (document.getElementById('modalStore').style.display!='block') { //if the Modal is open, don't make video features
+                            event.preventDefault();
+                            console.log('Video Paused? ' + flag);
+                            FPlayPause();
+                        }
                         break;
 
                     case base.options.KeyMap.FAST_FORWARD:
@@ -154,6 +155,7 @@
                         break;
 
                     case base.options.KeyMap.VOLUME_UP:
+                        event.preventDefault();
                         if (volumeSlider.value<100) {
                             volumeSlider.value = (parseInt(volumeSlider.value)+1);
                             console.log('volume :' + volumeSlider.value);
@@ -162,6 +164,7 @@
                         break;
 
                     case base.options.KeyMap.VOLUME_DOWN:
+                        event.preventDefault();
                         if (volumeSlider.value>0) {
                             volumeSlider.value = (parseInt(volumeSlider.value)-1);
                             console.log('volume :' + volumeSlider.value);
@@ -248,6 +251,18 @@
                 }
             }
 
+            function FFullScreenExit() {
+                if (vid.exitFullscreen) {
+                    vid.exitFullscreen();
+                } else if (vid.mozCancelFullscreen) {
+                    vid.mozCancelFullscreen();
+                } else if (vid.webkitExitFullscreen) {
+                    vid.webkitExitFullscreen();
+                } else if (vid.msExitFullscreen) {
+                    vid.msExitFullscreen();
+                }
+            }
+
             /**
              * change time video to 0 and pause video
              */
@@ -281,6 +296,7 @@
                 seekTime.innerHTML = mins + ":" + secs;
 
                 if ( vid.currentTime == vid.duration){
+                    vid.currentTime=0;
                     playPause.className = "btn btn-default  btn-sm glyphicon glyphicon-play";
                     seekSlider.value=0;
                     seekTime.innerHTML= "00:00";
@@ -306,6 +322,7 @@
              * take the different elements of DOM and associate an event
              */
             $("#PlayPauseButton").click(function () { FPlayPause(); });
+            $("#video").click(function () { FPlayPause(); });
             $("#seekBar").change(function () { /*mousedown*/ TimeBar(); });
             $("#seekBar").mousedown(function () { TimeBarMouseDown(); });
             $("#seekBar").mouseup(function () { TimeBarMouseUp(); });
@@ -315,6 +332,75 @@
             $("#fullScreenButton").click(function () { FFullScreen(); });
             $("#stopButton").click(function () { FStop(); });
             $("#playRateList").change(function () { FPlayRate(); });
+
+            //Video Scenes
+            /**
+             * get inputs in Modal
+             */
+            var nameScene=$("#recipient-name").get(0);
+            var messageScene=$("#message-text").get(0);
+
+            //buttons to save and view
+            $("#store").click(function () { StoreScene(); });
+            $("#show").click(function () { ShowSceenes(); });
+            $("#delete").click(function () { DeleteScenes(); });
+
+            /**
+             * get saved scenes in localStorage and add the scene created in the array
+             */
+            function StoreScene(){
+                vid.pause();
+                var scenesStored = localStorage.getItem('scenes');
+                var  scenes= [];
+                if (scenesStored) {
+                    scenes = JSON.parse(scenesStored);
+                }
+                var o= { name: nameScene.value, time: vid.currentTime, description: messageScene.value };
+                scenes.push(o);
+                localStorage.setItem('scenes', JSON.stringify(scenes));
+
+                nameScene.value="";
+                messageScene.value="";
+
+            }
+
+            /**
+             * each saved scene show a button
+             */
+            function ShowSceenes(){
+                $("#scenes").get(0).innerHTML="";
+                var scenesStored = localStorage.getItem('scenes');
+                var  scenes= [];
+                if (scenesStored) {
+                    scenes = JSON.parse(scenesStored);
+                }
+                var scene;
+                for (var i=0; i<scenes.length; i++){
+                    scene=scenes[i];
+                    $("#scenes").append("<button type='button' id='button"+i+"' class='buttonScene btn btn-link btn-xs' data-toggle='popover' data-trigger='hover' title='Description:("+scene.time+")' data-content='"+scene.description+"' value='"+scene.time+"'>"+scene.name+"</button><br/>");
+
+                }
+
+                //activate popover
+                $('[data-toggle="popover"]').popover();
+
+                /**
+                 * get the id of the button pressed and assign its value at the time of video
+                 */
+                $(".buttonScene").click(function() {
+                   vid.currentTime=$("#"+this.id).get(0).value;
+                    vid.pause();
+                });
+
+            }
+
+            function DeleteScenes(){
+
+                var  scenes= [];
+                localStorage.setItem('scenes', JSON.stringify(scenes));
+                $("#scenes").get(0).innerHTML="";
+
+            }
         };
 
         // Run initializer
@@ -333,6 +419,7 @@
         msg: "",
 
         NameKeyMap: {
+            tab:"tab",
             space: "space",
             Trow: "row right/left",
             Vrow: "row up/down",
@@ -340,14 +427,14 @@
         },
 
         KeyMap: {
-                FULL_SCREEN: 46,
+                FULL_SCREEN: 9,//tab //46,
                 PLAY_PAUSE: 32,  //space
                 FAST_FORWARD: 107, //+
                 BACKWARD: 109, //-
                 CHANGE_TIME_UP:39, //row right
                 CHANGE_TIME_DOWN:37, //row left
                 VOLUME_UP:38, //row up
-                VOLUME_DOWN: 40//row down
+                VOLUME_DOWN: 40, //row down
         }
     };
 
@@ -378,7 +465,7 @@
         "</div> " +
         "</li> " +
         "<li class='col-xs-3 col-md-1 col-sm-1'> " +
-        "<button type='button' id='fullScreenButton' class='btn btn-default btn-sm glyphicon glyphicon-fullscreen'></button> " +
+        "<button type='button' id='fullScreenButton' title='{tab}' class='btn btn-default btn-sm glyphicon glyphicon-fullscreen'></button> " +
         "</li> " +
         "<li class='col-md-1 hidden-sm hidden-xs'> " +
         "<button type='button' id='stopButton' class='btn btn-default btn-sm glyphicon glyphicon-stop'></button> " +
